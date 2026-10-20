@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f5f7" />
+    <meta name="color-scheme" content="light dark" />
+
+    <script>
+      // Applies the saved theme before first paint so there is no flash.
+      // Light is the default; dark is opt-in via the toggle.
+      (function () {
+        try {
+          var stored = window.localStorage.getItem('pavandeep-theme')
+          var theme = stored === 'dark' || stored === 'light' ? stored : 'light'
+          document.documentElement.dataset.theme = theme
+        } catch (error) {
+          document.documentElement.dataset.theme = 'light'
+        }
+      })()
+    </script>
+
+    <title>Pavandeep B. — Software &amp; Product Engineering</title>
+    <meta
+      name="description"
+      content="Portfolio of Pavandeep B. — building useful things with technology across web applications, software testing and AI-powered projects."
+    />
+    <meta name="author" content="Pavandeep B." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pavandeep.is-a.dev/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pavandeep B." />
+    <meta property="og:url" content="https://pavandeep.is-a.dev/" />
+    <meta property="og:title" content="Pavandeep B. — Software &amp; Product Engineering" />
+    <meta
+      property="og:description"
+      content="Early-career engineer working across application development, product functionality, testing, API validation, and AI-powered applications."
+    />
+    <meta property="og:image" content="https://pavandeep.is-a.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Pavandeep B. — Software and Product Engineering, AI-Powered Applications"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pavandeep B. — Software &amp; Product Engineering" />
+    <meta
+      name="twitter:description"
+      content="Early-career engineer working across application development, product functionality, testing, API validation, and AI-powered applications."
+    />
+    <meta name="twitter:image" content="https://pavandeep.is-a.dev/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pavandeep B.",
+        "url": "https://pavandeep.is-a.dev",
+        "jobTitle": "Software & Product Engineering",
+        "description": "Information Science & Engineering graduate with hands-on experience in web application development, functional testing, API validation, debugging, and technical documentation.",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Bapuji Institute of Engineering & Technology"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/pavandeepb",
+          "https://github.com/pavandeepb"
+        ],
+        "knowsAbout": [
+          "Software development",
+          "Product engineering",
+          "Functional testing",
+          "REST API validation",
+          "Applied AI",
+          "Retrieval-augmented generation"
+        ]
+      }
+    </script>
+    <noscript>
+      <style>
+        .reveal,
+        .hero-enter {
+          opacity: 1 !important;
+          transform: none !important;
+          animation: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

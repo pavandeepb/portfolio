@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pavandeep B. — social card</title>
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 700;
+        src: url('../public/fonts/inter-latin-variable.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../public/fonts/ibm-plex-mono-latin-400.woff2') format('woff2');
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        margin: 0;
+        overflow: hidden;
+        background: #f5f5f7;
+        color: #1d1d1f;
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+      }
+
+      .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to right, rgb(15 23 42 / 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgb(15 23 42 / 0.05) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: radial-gradient(ellipse 80% 95% at 78% 5%, #000 0%, transparent 82%);
+      }
+
+      .wash {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 50% 65% at 84% 0%,
+          rgb(0 102 204 / 0.09) 0%,
+          transparent 70%
+        );
+      }
+
+      .frame {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 52px 64px 44px;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .mark {
+        position: relative;
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 1px solid #d2d2d7;
+        border-radius: 10px;
+        background: #ffffff;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: #1d1d1f;
+      }
+
+      .mark::after {
+        content: '';
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        width: 7px;
+        height: 7px;
+        border: 2px solid #f5f5f7;
+        border-radius: 999px;
+        background: #0066cc;
+      }
+
+      .brand-name {
+        font-size: 17px;
+        font-weight: 650;
+        letter-spacing: -0.02em;
+      }
+
+      .top-meta {
+        color: #86868b;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      main {
+        margin-top: 66px;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0;
+        color: #6e6e73;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: '';
+        width: 24px;
+        height: 1px;
+        background: #0066cc;
+      }
+
+      h1 {
+        margin: 22px 0 0;
+        font-size: 88px;
+        font-weight: 650;
+        letter-spacing: -0.055em;
+        line-height: 1;
+      }
+
+      h1 span {
+        color: #0066cc;
+      }
+
+      .description {
+        max-width: 720px;
+        margin: 24px 0 0;
+        color: #6e6e73;
+        font-size: 17px;
+        line-height: 1.6;
+      }
+
+      footer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid #e4e4e7;
+      }
+
+      .capabilities {
+        display: flex;
+        gap: 34px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .capabilities li {
+        color: #6e6e73;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .capabilities span {
+        margin-right: 8px;
+        color: #0066cc;
+      }
+
+      .footer-meta {
+        color: #86868b;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+    <div class="wash"></div>
+
+    <div class="frame">
+      <header class="top">
+        <div class="brand">
+          <span class="mark">PB</span>
+          <span class="brand-name">Pavandeep B.</span>
+        </div>
+        <span class="top-meta">Portfolio / 2026</span>
+      </header>
+
+      <main>
+        <p class="eyebrow">Software · Product · Applied AI</p>
+        <h1>Building useful things<br />with technology<span>.</span></h1>
+        <p class="description">
+          I work across web applications, software testing and AI-powered projects.
+        </p>
+      </main>
+
+      <footer>
+        <ul class="capabilities">
+          <li><span>01</span>Application development</li>
+          <li><span>02</span>Functional testing</li>
+          <li><span>03</span>API validation</li>
+        </ul>
+        <span class="footer-meta">github.com/pavandeepb</span>
+      </footer>
+    </div>
+  </body>
+</html>
