@@ -95,6 +95,7 @@ Everything shown on the site is either supplied directly by the site owner or ve
 | `scripts/touch-icon.html` (180×180) | `public/apple-touch-icon.png` | `npm run assets` |
 | `public/projects/*` | Case-study figures (from public repos) | Static files — replace to update |
 | `public/portrait-*.jpg` | Hero portrait — 4:5 crop, 800×1000 and 400×500 variants | Static files — replace to update |
+| `public/mark-96.png` | Brand monogram used in the navbar, mobile menu, and footer | Static file — replace to update |
 | `public/fonts/*` | Self-hosted Inter + IBM Plex Mono (no third-party font CDN) | Static files |
 
 ## Project structure

@@ -5,6 +5,7 @@ import { profile } from '../data/profile'
 import { useActiveSection } from '../lib/useActiveSection'
 import { cn } from '../lib/cn'
 import { scrollToSection } from '../lib/scroll'
+import { BrandMark } from './BrandMark'
 import { SectionLink } from './SectionLink'
 import { SocialLinks } from './SocialLinks'
 import { ThemeToggle } from './ThemeToggle'
@@ -39,10 +40,7 @@ export function Navbar() {
       <header className="site-header fixed inset-x-0 top-0 z-50" data-scrolled={scrolled}>
         <div className="shell flex h-[74px] items-center justify-between gap-6">
           <SectionLink id="top" className="group flex shrink-0 items-center gap-3">
-            <span className="relative grid size-8 place-items-center rounded-[9px] border border-line-strong bg-surface font-mono text-[10px] tracking-[0.04em] text-fg transition-colors group-hover:border-accent/70">
-              {profile.initials}
-              <span className="absolute -right-0.5 -top-0.5 size-1.5 rounded-full border border-ink bg-accent" />
-            </span>
+            <BrandMark className="group-hover:border-accent/70" />
             <span className="text-sm font-semibold tracking-[-0.015em] text-fg">
               {profile.name}
             </span>
@@ -189,10 +187,7 @@ function MobileMenu({ activeSection, onClose }: MobileMenuProps) {
           className="flex items-center gap-3"
           aria-label="Pavandeep B. — home"
         >
-          <span className="relative grid size-8 place-items-center rounded-[9px] border border-line-strong bg-surface font-mono text-[10px] tracking-[0.04em]">
-            {profile.initials}
-            <span className="absolute -right-0.5 -top-0.5 size-1.5 rounded-full border border-ink bg-accent" />
-          </span>
+          <BrandMark />
           <span className="text-sm font-semibold">{profile.name}</span>
         </Link>
         <div className="flex items-center gap-2.5">

@@ -1,6 +1,7 @@
 import { ArrowUp } from 'lucide-react'
 import { getEmailHref, getSocialHref, profile } from '../data/profile'
 import { scrollToPageTop } from '../lib/scroll'
+import { BrandMark } from './BrandMark'
 import { SectionLink } from './SectionLink'
 import { SocialLinks } from './SocialLinks'
 
@@ -28,10 +29,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-16">
           <div>
             <div className="flex items-center gap-3">
-              <span className="relative grid size-8 place-items-center rounded-[9px] border border-line-strong bg-surface font-mono text-[10px]">
-                {profile.initials}
-                <span className="absolute -right-0.5 -top-0.5 size-1.5 rounded-full border border-ink bg-accent" />
-              </span>
+              <BrandMark />
               <p className="text-sm font-semibold">{profile.name}</p>
             </div>
             <p className="mt-5 max-w-md text-sm leading-7 text-muted">
