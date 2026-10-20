@@ -1,14 +1,16 @@
 import { execFileSync } from 'node:child_process'
-import { existsSync, mkdtempSync, readFileSync, rmSync, statSync } from 'node:fs'
+import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
 /**
- * Regenerates the résumé PDF and the social-share image using headless
- * Chrome or Edge. Run with: npm run assets
+ * Regenerates the social-share image and app icon using headless Chrome or Edge.
+ * Run with: npm run assets
  *
- * Override the browser path with CHROME_PATH if neither default is found.
+ * The resume PDF is maintained externally (FlowCV export) and is not generated
+ * by this script. Override the browser path with CHROME_PATH if neither default
+ * browser is found.
  */
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -40,29 +42,6 @@ function run(args) {
 }
 
 try {
-  const resumeSource = path.join(root, 'public', 'resume', 'resume.html')
-  const resumeOutput = path.join(root, 'public', 'resume', 'Pavandeep-B-Resume.pdf')
-
-  run([
-    '--headless=new',
-    '--disable-gpu',
-    '--no-first-run',
-    '--no-default-browser-check',
-    `--user-data-dir=${profileDir}`,
-    '--no-pdf-header-footer',
-    '--virtual-time-budget=4000',
-    `--print-to-pdf=${resumeOutput}`,
-    pathToFileURL(resumeSource).href,
-  ])
-
-  const resumeBytes = readFileSync(resumeOutput, 'latin1')
-  const pageMarkers = (resumeBytes.match(/\/Type\s*\/Page(?!s)/g) ?? []).length
-  console.log(
-    `Resume PDF written (${Math.round(statSync(resumeOutput).size / 1024)} KB, ${pageMarkers} page${
-      pageMarkers === 1 ? '' : 's'
-    }).`,
-  )
-
   const ogSource = path.join(root, 'scripts', 'og-image.html')
   const ogOutput = path.join(root, 'public', 'og-image.png')
 
