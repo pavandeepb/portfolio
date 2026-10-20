@@ -26,6 +26,9 @@ export function AboutSection() {
                 </p>
               ))}
             </div>
+            <blockquote className="mt-8 border-l border-accent/45 pl-4 text-[15px] leading-7 text-muted">
+              {profile.principles.headline}
+            </blockquote>
           </Reveal>
 
           <Reveal className="lg:col-span-4 lg:col-start-9" delay={90}>

@@ -48,8 +48,8 @@ export function Hero() {
             </span>
           </h1>
 
-          <div className="mt-12 grid gap-12 border-t border-line pt-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(300px,0.6fr)] lg:gap-14">
-            <div>
+          <div className="mt-12 grid gap-12 border-t border-line pt-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.6fr)] lg:gap-14">
+            <div className="flex flex-col">
               <p
                 className="hero-enter max-w-[52ch] text-[clamp(1.05rem,1.7vw,1.3rem)] font-medium leading-relaxed tracking-[-0.015em] text-muted"
                 style={{ '--enter-delay': '180ms' } as CSSProperties}
@@ -83,34 +83,44 @@ export function Hero() {
                   </a>
                 ) : null}
               </div>
+
+              <div
+                className="hero-enter mt-9"
+                style={{ '--enter-delay': '300ms' } as CSSProperties}
+              >
+                <p className="mono text-[10px] text-dim">Currently</p>
+                <p className="mt-2 text-[13px] leading-6 text-muted">
+                  <span className="font-medium text-fg">{profile.currently.label}</span>
+                  <span aria-hidden="true"> · </span>
+                  {profile.currently.detail}
+                </p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {profile.focus.map((item) => (
+                    <li key={item} className="tag">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <aside aria-label="Current focus" className="hero-enter" style={{ '--enter-delay': '300ms' } as CSSProperties}>
-              <div className="card p-6">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="mono text-[10px] text-dim">Currently</p>
-                  <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
-                </div>
-                <p className="mt-4 text-[15px] font-medium leading-snug text-fg">
-                  {profile.currently.label}
-                </p>
-                <p className="mt-1 text-[13px] text-muted">{profile.currently.detail}</p>
-
-                <div className="mt-6 border-t border-line pt-5">
-                  <p className="mono text-[10px] text-dim">Focus</p>
-                  <ul className="mt-3 space-y-1.5">
-                    {profile.focus.map((item) => (
-                      <li key={item} className="text-[13px] leading-6 text-muted">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <blockquote className="mt-6 border-l border-accent/45 pl-4 text-[13px] leading-6 text-muted">
-                  {profile.principles.headline}
-                </blockquote>
-              </div>
+            <aside
+              aria-label="Portrait"
+              className="hero-enter order-first mx-auto w-full max-w-[340px] lg:order-none lg:mx-0 lg:max-w-none"
+              style={{ '--enter-delay': '360ms' } as CSSProperties}
+            >
+              <figure className="portrait-frame">
+                <img
+                  src="/portrait-800.jpg"
+                  srcSet="/portrait-400.jpg 400w, /portrait-800.jpg 800w"
+                  sizes="340px"
+                  width={800}
+                  height={1000}
+                  alt="Portrait of Pavandeep B."
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </figure>
             </aside>
           </div>
 

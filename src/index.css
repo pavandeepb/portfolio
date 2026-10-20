@@ -518,6 +518,26 @@
     box-shadow: var(--card-shadow);
   }
 
+  .portrait-frame {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    background: var(--surface);
+    box-shadow: var(--card-shadow);
+  }
+
+  .portrait-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  [data-theme='dark'] .portrait-frame img {
+    filter: brightness(0.9) contrast(1.02);
+  }
+
   .site-header {
     border-bottom: 1px solid transparent;
     transition:
